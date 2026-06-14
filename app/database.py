@@ -2,7 +2,6 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-# 1. Configuración para leer el archivo .env automáticamente
 class Settings(BaseSettings):
     MONGO_ROOT_USER: str
     MONGO_ROOT_PASSWORD: str
@@ -16,11 +15,9 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
-# 2. Construir la URI de conexión de MongoDB
-# Formato: mongodb://usuario:contraseña@localhost:27017
 MONGO_DETAILS = f"mongodb://{settings.MONGO_ROOT_USER}:{settings.MONGO_ROOT_PASSWORD}@localhost:27017"
 
-# 3. Inicializar el cliente asíncrono
+# 3. Inicializar el cliente asíncrono te amooooooooooooo muchoooooo
 client = AsyncIOMotorClient(MONGO_DETAILS)
 
 # 4. Obtener la referencia a la base de datos FHIR

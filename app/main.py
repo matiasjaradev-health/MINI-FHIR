@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.routes.patient import router as patient_router
 
 # FastAPI instance
 app = FastAPI(
@@ -13,7 +14,14 @@ app = FastAPI(
         "name": "MIT License"
     }
 )
+app.include_router(patient_router)
 
+@app.get("/")
+def read_root():
+    return {
+        "message": "Servidor FHIR con FastAPI y MongoDB corriendo exitosamente.",
+        "docs_url": "/docs"
+    }
 
 
 @app.get("/fhir/metadata")
