@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
 from fhir.resources.patient import Patient
 from app.database import db 
-from uuid import UUID
 
 router = APIRouter(
     prefix="/Patient",
