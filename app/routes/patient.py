@@ -7,6 +7,8 @@ router = APIRouter(
     tags=["Patient"]
 )
 
+
+
 CL_CORE_PROFILE = "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl"
 
 
